@@ -26,6 +26,14 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
+// Singleton is used
+// will be hooked to db and retrieve data - stateless
+// currently it is stored in memory - statefull
+/*
+we define a simple map in the customerDB field that will store created      Customer objects in memory.
+We use a  java.util.concurrent.ConcurrentHashMap for  customerDB because CustomerResource is a singleton and will have      concurrent requests accessing the map.
+ */
+
 @Path("/customers")
 public class CustomerResource {
    private Map<Integer, Customer> customerDB = new ConcurrentHashMap<Integer, Customer>();

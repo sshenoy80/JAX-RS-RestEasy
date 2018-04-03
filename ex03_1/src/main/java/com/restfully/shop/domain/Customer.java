@@ -1,5 +1,9 @@
 package com.restfully.shop.domain;
 
+
+// POJO - java bean
+// will be using JAXB for XML binding later
+// JPA class entity bean
 public class Customer {
    private int id;
    private String firstName;
